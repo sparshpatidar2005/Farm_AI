@@ -1,97 +1,255 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# 🌱 FarmAI — AI-Powered Smart Agriculture Platform
 
-# Getting Started
+FarmAI is a smart agriculture project combining a React Native mobile application with machine learning, deep learning, and computer vision techniques for crop disease classification and agricultural assistance.
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+The mobile application provides farming-related features such as weather information, crop calendars, reminders, and community interactions. The ML component explores image-based disease classification for eight crops: Apple, Banana, Cotton, Grapes, Mango, Rice, Sugarcane, and Wheat.
 
-## Step 1: Start Metro
+**My primary role was in Machine Learning, Deep Learning, and Computer Vision**, focusing on image preprocessing, crop-specific model experimentation, classification, and model evaluation.
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+## 📱 Application Screenshots
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+### 1. Application Overview
 
-```sh
-# Using npm
+![FarmAI Screenshot 1](screenshots/1.jpeg)
+
+### 2. Application Interface
+
+![FarmAI Screenshot 2](screenshots/2.jpeg)
+
+### 3. Application Features
+
+![FarmAI Screenshot 3](screenshots/3.jpeg)
+
+![FarmAI Screenshot 4](screenshots/4.jpeg)
+
+### 4. Additional Screens
+
+![FarmAI Screenshot 5](screenshots/5.jpeg)
+
+![FarmAI Screenshot 6](screenshots/6.jpeg)
+
+![FarmAI Screenshot 7](screenshots/7.jpeg)
+
+![FarmAI Screenshot 8](screenshots/8.jpeg)
+
+![FarmAI Screenshot 9](screenshots/9.jpeg)
+
+![FarmAI Screenshot 10](screenshots/10.jpeg)
+
+![FarmAI Screenshot 11](screenshots/11.jpeg)
+
+## 🚀 Key Features
+
+- Crop leaf disease classification experiments across eight crops.
+- Crop-specific deep learning architectures.
+- Image preprocessing and automatic feature extraction.
+- Transfer learning with pretrained architectures where applicable.
+- Classification performance evaluation.
+- Mobile screens for farming assistance, weather, crop calendars, reminders, and community interactions.
+- Comparison of traditional machine learning classifiers using CNN-generated image representations for grape disease classification.
+
+## 🌾 Crops and Models
+
+| Crop | Model / Architecture |
+|---|---|
+| Apple | Xception |
+| Banana | Vision Transformer (ViT-B/16) |
+| Cotton | Custom CNN |
+| Grapes | CNN features + traditional ML classifiers |
+| Mango | VGG16 |
+| Rice | Xception |
+| Sugarcane | ResNet50 |
+| Wheat | Custom CNN |
+
+## 👨‍💻 My Role: Machine Learning & Deep Learning
+
+My primary contribution focused on the machine learning and deep learning components of FarmAI.
+
+### Dataset Preparation and Preprocessing
+
+- Worked with labeled crop leaf image datasets.
+- Prepared images for model training and evaluation.
+- Applied image resizing and normalization according to model requirements.
+- Organized data by crop and disease category.
+- Prepared training, validation, and testing splits where applicable.
+
+### Model Development
+
+Experimented with different architectures for crop-specific classification tasks:
+
+- Xception for apple and rice.
+- Vision Transformer (ViT-B/16) for banana.
+- Custom CNNs for cotton and wheat.
+- VGG16 for mango.
+- ResNet50 for sugarcane.
+- CNN feature extraction with Decision Tree, Random Forest, XGBoost, and KNN for grape disease classification experiments.
+
+### Model Evaluation
+
+Used appropriate classification metrics where available:
+
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- Confusion matrix
+- Validation loss
+
+These metrics help assess overall performance, class-specific errors, and potential overfitting.
+
+### Recorded Grape Classification Results
+
+The grape classification notebook recorded the following accuracy values:
+
+| Model | Reported Accuracy |
+|---|---:|
+| CNN | 98.27% |
+| Decision Tree | 98.13% |
+| Random Forest | 98.34% |
+| XGBoost | 97.99% |
+| KNN | 98.48% |
+
+These results represent the recorded experiment and its evaluation setup; they do not guarantee equivalent performance on real-world field images.
+
+## 🔄 Machine Learning Workflow
+
+1. Collect labeled crop leaf images.
+2. Explore image categories and dataset quality.
+3. Preprocess images through resizing and normalization.
+4. Split the dataset into training, validation, and testing sets where applicable.
+5. Select an appropriate model architecture.
+6. Train or fine-tune the model.
+7. Generate predictions for input images.
+8. Evaluate predictions using classification metrics.
+9. Compare alternative models where applicable.
+10. Make predictions available to the application through the implemented inference workflow, where integration is present.
+
+## 🛠️ Technology Stack
+
+### Machine Learning and Computer Vision
+
+- Python
+- TensorFlow / Keras
+- PyTorch
+- Scikit-learn
+- XGBoost
+- OpenCV
+- NumPy
+- Pandas
+- Matplotlib
+- Seaborn
+- Jupyter Notebook
+
+### Mobile Application
+
+- React Native
+- TypeScript
+- JavaScript
+- Android and iOS development tools
+
+The specific libraries used depend on the individual model experiments and application modules.
+
+## 📂 Project Structure
+
+```text
+Farm_AI/
+├── android/
+├── ios/
+├── assets/
+├── components/
+├── screens/
+├── screenshots/
+│   ├── 1.jpeg
+│   ├── 2.jpeg
+│   ├── 3.jpeg
+│   ├── 4.jpeg
+│   ├── 5.jpeg
+│   ├── 6.jpeg
+│   ├── 7.jpeg
+│   ├── 8.jpeg
+│   ├── 9.jpeg
+│   ├── 10.jpeg
+│   └── 11.jpeg
+├── App.tsx
+├── app.json
+├── package.json
+├── package-lock.json
+└── README.md
+```
+
+## ⚙️ Getting Started
+
+### Prerequisites
+
+- Node.js and npm
+- Android Studio and an Android emulator or connected Android device
+- React Native development environment
+- Xcode and CocoaPods for iOS development on macOS
+
+### 1. Clone the repository
+
+```bash
+git clone <YOUR_REPOSITORY_URL>
+cd Farm_AI
+```
+
+Replace the placeholder with your repository's actual clone URL.
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Start Metro
+
+```bash
 npm start
-
-# OR using Yarn
-yarn start
 ```
 
-## Step 2: Build and run your app
+### 4. Run on Android
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+Open a second terminal in the project root and execute:
 
-### Android
-
-```sh
-# Using npm
+```bash
 npm run android
-
-# OR using Yarn
-yarn android
 ```
 
-### iOS
+For iOS on macOS, follow the project's CocoaPods setup instructions and run:
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
-```
-
-Then, and every time you update your native dependencies, run:
-
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
+```bash
 npm run ios
-
-# OR using Yarn
-yarn ios
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+For environment setup, refer to the [official React Native documentation](https://reactnative.dev/docs/set-up-your-environment).
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+## ⚠️ Limitations
 
-## Step 3: Modify your app
+- Classification performance depends on dataset quality, labels, and image conditions.
+- Performance on curated images may differ from real-world farm photographs.
+- Models can only classify categories represented in their training data.
+- Availability of model inference in the mobile application depends on the implemented integration.
+- Predictions should be treated as an initial screening aid, not a definitive agricultural diagnosis.
 
-Now that you have successfully run the app, let's make changes!
+## 🔮 Future Scope
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+- Integrate trained models through a documented API or on-device inference.
+- Improve robustness using diverse real-world crop images.
+- Add explainability techniques such as Grad-CAM where appropriate.
+- Expand crop and disease coverage.
+- Provide expert-reviewed disease management guidance.
+- Evaluate models on independent field datasets.
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+## 🎯 Project Objective
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+FarmAI explores the use of machine learning, deep learning, computer vision, and mobile application development to support crop disease identification and agricultural assistance.
 
-## Congratulations! :tada:
+## 👨‍💻 Contribution
 
-You've successfully run and modified your React Native App. :partying_face:
+**Primary focus:** Machine Learning, Deep Learning, and Computer Vision.
 
-### Now what?
+Key areas include image preprocessing, crop-specific model experimentation, image classification, traditional ML model comparison, and performance evaluation.
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+## 📄 License
 
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+Before distributing the project, select an appropriate open-source license and verify the licensing requirements of any third-party datasets, libraries, and pretrained model weights.
